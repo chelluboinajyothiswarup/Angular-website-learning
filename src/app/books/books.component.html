@@ -1,0 +1,24 @@
+<h2><b>Programming Books List!</b></h2>
+<!-- <button (click)="handleClick()" (mouseover)="handleClick()" [disabled]="isDisabled">Show Books</button> 
+<input type="text" [(ngModel)]="myName">
+<div>{{myName}}</div>
+-->
+<!-- method 1 
+<button (click)="toggleBook()">toggleBook</button>
+                     or -->
+<!-- <button (click)="isShowing = !isShowing">
+    <span *ngIf="!isShowing">Show Books</span>
+    <span *ngIf="isShowing">Hide Books</span>
+</button>
+check the difference in inspect of span and ng-container
+-->
+<!-- <button (click)="isShowing = !isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button> -->
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+    <ng-container *ngFor="let singlebook of books; let i=index">
+        <!-- <app-book (bookEmitter)="addtoCart($event)" [book]="singlebook"></app-book> -->
+        <app-book class="w-1/2 p-5 text-center" [book]="singlebook"></app-book>
+</ng-container>
+</ul>

@@ -1,0 +1,10 @@
+<li class="flex border rounded-xl h-60">
+    <!-- <p class="sno">{{ i+1 }}</p> -->
+    <img [src]="book.image" [alt]="book.name" width="100" class="m-auto rounded-sm"/>
+    <div class="m-auto">
+        <p class="text-lg"><b>{{book.name | titlecase}} by {{book.author | titlecase}}</b></p>
+        <p class="my-4">{{book.num | currency:'INR'}}</p>
+        <button class="bg-yellow-400 rounded p-3" *ngIf="!isInCart" (click)="addtoCart()">Add to cart</button>
+        <button class="bg-yellow-400 rounded p-3" *ngIf="isInCart" (click)="removefromCart()">Remove from cart</button>
+    </div>
+</li>
